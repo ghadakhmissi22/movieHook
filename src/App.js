@@ -5,9 +5,11 @@ import  movieData  from "./moviesData"; //export
 import AddMovie from "./components/addMovie/AddMovie";
 import FilterByTitle from "./components/FilterByTitle";
 import FilterByRate from './components/Rating'
+import {useMovies} from './hooks/useMovies';
 function App() {
   // console.log(moviesData)
-  const [movies, setmovies] = useState(movieData);
+  // const [movies, setmovies] = useState(movieData);
+  const {movies, setmovies} = useMovies();
   //state que je récupère du composant FilterByTitle
   const [searchTitle, setSearchTitle] = useState("");
   const [searchRate, setSearchRate] = useState(1);

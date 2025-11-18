@@ -11,6 +11,7 @@ const AddMovie = ({ movieAdd }) => {
   const [description, setDescription] = useState("");
   const [rate, setRate] = useState("");
   const [posterUrl, setPosterUrl] = useState("");
+  const [trailer, setTrailer] = useState("");
   // console.log({ title, description, rate, posterUrl });
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +20,9 @@ const AddMovie = ({ movieAdd }) => {
     setDescription("");
     setRate("");
     setPosterUrl("");
+    setTrailer("");
     handleClose();
+
   };
   return (
     <div>
@@ -71,6 +74,17 @@ const AddMovie = ({ movieAdd }) => {
                 value={posterUrl}
                 onChange={(e) => setPosterUrl(e.target.value)}
               />
+              
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>trailer Url</Form.Label>
+              <Form.Control
+                type="url"
+                placeholder="ex:https://exemple.png"
+                value={posterUrl}
+                onChange={(e) => setPosterUrl(e.target.value)}
+              />
+              
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
